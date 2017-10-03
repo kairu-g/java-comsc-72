@@ -1,4 +1,5 @@
-/*kairu
+/*Kyle Goodwin
+ *COMSC-76
  *10/03/2017
  *Assignment #4
  */
@@ -12,6 +13,7 @@ public class countWords2
 	{
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Input text file name to be counted: ");
+		//not compulsory because idk how to "pass as command line argument"
 		String txtFile = keyboard.nextLine();	//text file only, include '.txt' in input
 
 		//BufferedReader initialization
@@ -21,17 +23,17 @@ public class countWords2
 
 		String text2;
 
-		//string adding loop
+		//string adding loop will end loop if line has absolutely nothing in it
 		while ((text2 = bufReader.readLine()) != null)
 		{
-			text = text + text2;
+			text += text2;
 		}
 
 		//string treemap init.
 		Map<String, Integer> map = new TreeMap<>();
 
-		//splitting String text into serperate String objects
-		String[] words = text.split("[\\s+\\p{P}]");
+		//splitting String text into seperate String objects (delimiters are in regex)
+		String[] words = text.split("[\\s+\\p{P}]");	//will count numbers as words
 
 		for (int i = 0; i < words.length; i++)
 		{
@@ -51,7 +53,7 @@ public class countWords2
 				}
 			}
 		}
-		System.out.println("Word:\tCount:");
-		map.forEach((k, v) -> System.out.println(k + "\t" + v));
+		System.out.println("Count:\tWord:");
+		map.forEach((k, v) -> System.out.println(v + "\t" + k));
 	}
 }
