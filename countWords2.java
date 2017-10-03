@@ -1,6 +1,10 @@
+/*kairu
+ *10/03/2017
+ *Assignment #4
+ */
+
 import java.io.*;
 import java.util.*;
-import java.util.Scanner;
 
 public class countWords2
 {
@@ -8,23 +12,27 @@ public class countWords2
 	{
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Input text file name to be counted: ");
-		String txtFile = keyboard.nextLine();
+		String txtFile = keyboard.nextLine();	//text file only, include '.txt' in input
 
-		FileReader input = new FileReader(txtFile);
-		BufferedReader bufReader = new BufferedReader(input);
+		//BufferedReader initialization
+		BufferedReader bufReader = new BufferedReader(new FileReader(txtFile));
 
-		String text = bufReader.readLine();
+		String text = "";	//null String initialization
 
 		String text2;
 
+		//string adding loop
 		while ((text2 = bufReader.readLine()) != null)
 		{
 			text = text + text2;
 		}
 
+		//string treemap init.
 		Map<String, Integer> map = new TreeMap<>();
 
+		//splitting String text into serperate String objects
 		String[] words = text.split("[\\s+\\p{P}]");
+
 		for (int i = 0; i < words.length; i++)
 		{
 			String key = words[i].toLowerCase();
