@@ -30,8 +30,8 @@ public class countWords2
 		//string treemap init.
 		Map<String, Integer> map = new TreeMap<>();
 
-		//splitting String text into serperate String objects
-		String[] words = text.split("[\\s+\\p{P}]");
+		//splitting String text into serperate String objects (delimiters are in regex)
+		String[] words = text.split("[\\s+\\p{P}0-9]");
 
 		for (int i = 0; i < words.length; i++)
 		{
