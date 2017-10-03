@@ -1,5 +1,4 @@
-/*Kyle Goodwin
- *COMSC-76
+/*Kairu
  *10/03/2017
  *Assignment #4
  */
