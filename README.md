@@ -1,0 +1,2 @@
+# WordCounter
+counts words xD
